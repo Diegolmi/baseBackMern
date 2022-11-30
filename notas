@@ -1,13 +1,13 @@
-bcryptjs una libreria para encriptar contraseñas.
-jsonWebToken vamos generar un token que contiene toda nuestra informacion para mantener activa nuestra sesion.
-cors para que nuestra aplicacion se renderize en todos los navegadores.
-dontenv  setear las variables de entorno .env 
-mongoose actualizar en tiempo real nuestros cambios
-nodemailer para armar nuestro mail y enviarlo
-passport 
-express para generar rapidamente nuestro servidor
+// bcryptjs una libreria para encriptar contraseñas.
+// jsonWebToken vamos generar un token que contiene toda nuestra informacion para mantener activa nuestra sesion.
+// cors para que nuestra aplicacion se renderize en todos los navegadores.
+// dontenv  setear las variables de entorno .env 
+// mongoose actualizar en tiempo real nuestros cambios
+// nodemailer para armar nuestro mail y enviarlo
+// passport 
+// express para generar rapidamente nuestro servidor
 
-Tarea 
+// Tarea 
 
 // Estructura de carpetas con Controllers, modelos, rutas, middleware, database-
 // userModel
