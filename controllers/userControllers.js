@@ -143,74 +143,69 @@ const logout = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-    const { id } = req.params;
-    try {
-        if (!mongoose.inValidObjectId(id)) {
-        res.status(400).json({
-            statusCode: 400,
-            message: "Id invalido",
-        });
-        }
-        const user = await User.findByIdAndUpdate(id, req.body, { new: true });
-        if (!user) {
-        res.status(404).json({
-            statusCode: 404,
-            message: "Usuario no encontrado",
-        });
-        }
-        res.status(200).json({
-        statusCode: 200,
-        message: "Usuario actualizado",
-        });
-    } catch (error) {
-        res.status(500).json({
-        statusCode: 500,
-        message: "Error al actualizar usuario",
-        error: error.message,
-        });
+  const { id } = req.params;
+  try {
+    if (!mongoose.inValidObjectId(id)) {
+      res.status(400).json({
+        statusCode: 400,
+        message: "Id invalido",
+      });
     }
+    const user = await User.findByIdAndUpdate(id, req.body, { new: true });
+    if (!user) {
+      res.status(404).json({
+        statusCode: 404,
+        message: "Usuario no encontrado",
+      });
+    }
+    res.status(200).json({
+      statusCode: 200,
+      message: "Usuario actualizado",
+    });
+  } catch (error) {
+    res.status(500).json({
+      statusCode: 500,
+      message: "Error al actualizar usuario",
+      error: error.message,
+    });
+  }
 };
 
 const deleteUser = async (req, res) => {
-    const { id } = req.params;
-    try {
-        if (!mongoose.inValidObjectId(id)) {
-        res.status(400).json({
-            statusCode: 400,
-            message: "Id invalido",
-        });
-        }
-        const user = await User.findByIdAndDelete(id);
-        if (!user) {
-        res.status(404).json({
-            statusCode: 404,
-            message: "Usuario no encontrado",
-        });
-        }
-        res.status(200).json({
-        statusCode: 200,
-        message: "Usuario eliminado",
-        });
-    } catch (error) {
-        res.status(500).json({
-        statusCode: 500,
-        message: "Error al eliminar usuario",
-        error: error.message,
-        });
+  const { id } = req.params;
+  try {
+    if (!mongoose.inValidObjectId(id)) {
+      res.status(400).json({
+        statusCode: 400,
+        message: "Id invalido",
+      });
     }
+    const user = await User.findByIdAndDelete(id);
+    if (!user) {
+      res.status(404).json({
+        statusCode: 404,
+        message: "Usuario no encontrado",
+      });
+    }
+    res.status(200).json({
+      statusCode: 200,
+      message: "Usuario eliminado",
+    });
+  } catch (error) {
+    res.status(500).json({
+      statusCode: 500,
+      message: "Error al eliminar usuario",
+      error: error.message,
+    });
+  }
 };
 
 module.exports = {
-    getUsers,
-    getUser,
-    registerUser,
-    loginUser,
-    logout,
-    updateUser,
-    deleteUser,
+  getAllusers,
+  getUser,
+  registerUser,
+  loginUser,
+  logout,
+  updateUser,
+  deleteUser,
 };
-
-
-
-
-
