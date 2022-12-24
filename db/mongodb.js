@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const { dbConfig } = require('../config')
+mongoose.set('strictQuery', true);
 
 mongoose.connection.on('abierto', () => console.log('Conexión a la base de datos establecida'))
 
